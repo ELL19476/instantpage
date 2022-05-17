@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "dev": "concurrently \"rollup -c -w\" \"npm run watch:tailwind\"",
     "start": "sirv public --no-clear",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "watch:tailwind": "postcss src/app.css -o public/build/index.css -w",
+    "build:tailwind": "cross-env NODE_ENV=production postcss src/app.css -o public/build/index.css"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -14,7 +16,9 @@
     "@rollup/plugin-typescript": "^8.0.0",
     "@tsconfig/svelte": "^2.0.0",
     "autoprefixer": "^10.4.7",
+    "concurrently": "^7.2.0",
     "postcss": "^8.4.13",
+    "postcss-cli": "^9.1.0",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
