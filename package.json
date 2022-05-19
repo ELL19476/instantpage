@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "rollup -c",
-    "dev": "concurrently \"rollup -c -w\" \"npm run watch:tailwind\"",
+    "dev": "rollup -c -w",
     "start": "sirv public --no-clear",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "watch:tailwind": "postcss src/app.css -o public/build/index.css -w",
@@ -17,6 +17,8 @@
     "@tsconfig/svelte": "^2.0.0",
     "autoprefixer": "^10.4.7",
     "concurrently": "^7.2.0",
+    "fs": "^0.0.1-security",
+    "jsdom": "^19.0.0",
     "postcss": "^8.4.13",
     "postcss-cli": "^9.1.0",
     "rollup": "^2.3.4",

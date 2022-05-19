@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+  content: ['./src/**/*.{html,js,svelte,ts}', './public/build/*.{html,js}'],
   theme: {
     colors: {
       'background': '#01257D',
