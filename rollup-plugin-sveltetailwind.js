@@ -18,7 +18,7 @@ export default function sveltetailwind() {
                     if (err)
                       console.log(err);
                     else {
-                        require('child_process').spawn('npm', ['run', 'watch:tailwind'], {
+                        require('child_process').spawn('npm', ['run', 'tailwind'], {
                             stdio: ['ignore', 'inherit', 'inherit'],
                             shell: true
                         });

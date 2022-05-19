@@ -8,6 +8,7 @@
     "start": "sirv public --no-clear",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "watch:tailwind": "postcss src/app.css -o public/build/index.css -w",
+    "tailwind": "postcss src/app.css -o public/build/index.css",
     "build:tailwind": "cross-env NODE_ENV=production postcss src/app.css -o public/build/index.css"
   },
   "devDependencies": {
@@ -19,7 +20,7 @@
     "concurrently": "^7.2.0",
     "fs": "^0.0.1-security",
     "jsdom": "^19.0.0",
-    "postcss": "^8.4.13",
+    "postcss": "^8.4.14",
     "postcss-cli": "^9.1.0",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",

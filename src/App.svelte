@@ -1,10 +1,10 @@
 <script lang="ts">
-import Hr from "./components/basic/Hr.svelte";
+import Button from "./components/basic/Button.svelte";
 
 
 	
 </script>
 
 <main>
-    <Hr></Hr>
-</main>
+    <Button></Button>
+</main> 
