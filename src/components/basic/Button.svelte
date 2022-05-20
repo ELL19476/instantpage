@@ -9,7 +9,7 @@
     // <span class="h-[1em] inline-block ml-2">{@html arrow}</span>
 </script>
 
-<button class="font-extrabold transition-colors bg-{mainColor} text-{textColor} hover:bg-{accentColor} focus:outline-none active:ring active:ring-{accentColor} font-bold py-{pY} px-{pX} rounded-{rounding} border-0 uppercase shadow-glow shadow-{mainColor}/40 hover:shadow-{accentColor}/40 {classes} flex items-center">
+<button class="font-bold transition-colors bg-{mainColor} text-{textColor} hover:bg-{accentColor} focus:outline-none active:ring active:ring-{accentColor} font-bold py-{pY} px-{pX} rounded-{rounding} border-0 uppercase shadow-glow shadow-{mainColor}/40 hover:shadow-{accentColor}/40 {classes} flex items-center">
     <slot></slot>
 </button>
 

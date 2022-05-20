@@ -1,9 +1,9 @@
 <script lang="ts">
-import SiteHeader from "./SiteHeader.svelte";
+import SiteHeader from "./components/SiteHeader.svelte";
 
 
 </script>
 
 <main>
-    <SiteHeader />
+    <SiteHeader/>
 </main>
