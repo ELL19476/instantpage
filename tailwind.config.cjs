@@ -17,7 +17,16 @@ module.exports = {
       'accent-1': '#667CF2',
       'accent-2': '#F83999'
     },
-    extend: {},
+    fontFamily: {
+      'sans': ['Roboto', 'system-ui'],
+      'display': ['Roboto', 'sans-serif'],
+      'body': ['Roboto', 'sans-serif'],
+    },
+    extend: {
+      properties: {
+        'background-gradient': 'linear-gradient(180deg, #0F2D8A 0%, #001E68 100%)'
+      }
+    },
   },
   plugins: [],
 }
