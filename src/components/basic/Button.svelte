@@ -6,6 +6,7 @@
     export let pY = "2";
     export let pX = "5";
     export let classes = "";
+    export {classes as class};
     // <span class="h-[1em] inline-block ml-2">{@html arrow}</span>
 </script>
 

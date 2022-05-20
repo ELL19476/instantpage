@@ -19,7 +19,8 @@ module.exports = {
     },
     extend: {
       dropShadow: {
-        'text': '0px 2px 1px rgba(0, 0, 0, 0.3)'
+        'text': '0px 2px 1px rgba(0, 0, 0, 0.3)',
+        'text-lg': '0px 8px 11px rgba(0, 0, 0, 0.3)'
       },
       boxShadow: {
         'glow': [
