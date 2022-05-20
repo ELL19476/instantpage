@@ -6,7 +6,7 @@ module.exports = {
       'background-bright': '#102E8A',
 
       'panel': '#5037BA',
-
+      
       'text-1': '#FDA33A',
       'text-2': '#7E93FF',
       'text-3': '#5179F9',
