@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+    body {
+        @apply bg-gradient-to-t from-background to-background-bright bg-fixed;
+    }
+    
+    h1{
+        @apply font-sans text-primary;
+    }
+
+    h2{
+
+    }
+
+    h3{
+        
+    }
+}
