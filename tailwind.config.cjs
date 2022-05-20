@@ -2,7 +2,7 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}', './public/build/*.{html,js}'],
   theme: {
     colors: {
-      'background': '#01257D',
+      'background': '#001E68',
       'background-bright': '#102E8A',
 
       'panel': '#5037BA',
