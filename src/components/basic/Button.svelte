@@ -6,6 +6,7 @@
     export let pY = "2";
     export let pX = "5";
     export let classes = "";
+    // <span class="h-[1em] inline-block ml-2">{@html arrow}</span>
 </script>
 
 <button class="transition-colors bg-{mainColor} text-{textColor} hover:bg-{accentColor} focus:outline-none active:ring active:ring-{accentColor} font-bold py-{pY} px-{pX} rounded-{rounding} border-0 uppercase shadow-glow shadow-{mainColor}/40 hover:shadow-{accentColor}/40 {classes} flex items-center">
