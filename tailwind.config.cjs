@@ -17,7 +17,13 @@ module.exports = {
       'accent-1': '#667CF2',
       'accent-2': '#F83999'
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        'glow': [
+            '0px -1.6px 6.3px rgba(0, 0, 0, 0.4)'
+        ]
+      }
+    },
   },
   plugins: [],
 }
