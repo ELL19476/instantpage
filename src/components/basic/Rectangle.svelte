@@ -1,10 +1,13 @@
 <script lang="ts">
-    export let width = "fit";
+    export let width = "56";
     export let height = "fit";
     export let padding = "3";
+
+    let _class = "";
+    export { _class as class };
 </script>
 
-<div class="w-{width} h-{height} p-{padding} rounded-lg bg-panel bg-opacity-40">
+<div class="w-{width} h-{height} p-{padding} rounded-lg bg-panel bg-opacity-40 {_class || ''}">
     <slot></slot>
 </div>
 

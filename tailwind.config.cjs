@@ -7,7 +7,7 @@ module.exports = {
 
       'panel': '#5037BA',
 
-      'text-1': '#F9A504',
+      'text-1': '#FDA33A',
       'text-2': '#7E93FF',
       'text-3': '#5179F9',
 
@@ -18,6 +18,9 @@ module.exports = {
       'accent-2': '#F83999'
     },
     extend: {
+      dropShadow: {
+        'text': '0px 2px 1px rgba(0, 0, 0, 0.3)'
+      },
       boxShadow: {
         'glow': [
             '0px -1.6px 6.3px rgba(0, 0, 0, 0.4)'

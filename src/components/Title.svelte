@@ -2,7 +2,7 @@
 import Center from "./basic/Center.svelte";
 
 
-    export let width = "1/2";
+    export let width = "3/5";
     export let smWidth = "auto";
     export let textAlign = "center";
     export let Fontsize = "5xl";
@@ -21,5 +21,6 @@ import Center from "./basic/Center.svelte";
 <style>
     h1{
         text-shadow: 0px -3.51027px 14.0411px rgba(255, 117, 73, 0.45), 0px 7.02053px 9.65324px rgba(0, 0, 0, 0.3);
+        line-height: 57px;
     }
 </style>
