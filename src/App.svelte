@@ -1,4 +1,5 @@
 <script lang="ts">
+import SiteBody from "./components/SiteBody.svelte";
 import SiteHeader from "./SiteHeader.svelte";
 
 
@@ -6,4 +7,5 @@ import SiteHeader from "./SiteHeader.svelte";
 
 <main>
     <SiteHeader />
+    <SiteBody/>
 </main>

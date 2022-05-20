@@ -4,7 +4,7 @@
 
 @layer base{
     body {
-        @apply bg-gradient-to-t from-background to-background-bright bg-fixed;
+        @apply bg-background;
     }
     
     h1{
@@ -18,5 +18,10 @@
     h3{
         @apply drop-shadow-text text-primary text-xl;
         
+    }
+
+    em {
+        @apply text-text-1;
+        @apply not-italic;
     }
 }
