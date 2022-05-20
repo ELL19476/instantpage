@@ -1,7 +1,6 @@
 <script lang="ts">
-import Hr from "./components/basic/Hr.svelte";
-import Rectangle from "./components/basic/Rectangle.svelte";
-import { Body } from 'svelte-body'
+import Button from "./components/basic/Button.svelte";
+
 import Title from "./components/Title.svelte";
 import Center from "./components/basic/Center.svelte";
 import Panel from "./components/Panel.svelte";
