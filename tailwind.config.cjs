@@ -22,7 +22,7 @@ module.exports = {
         'glow': [
             '0px -1.6px 6.3px rgba(0, 0, 0, 0.4)'
         ]
-      },
+      },  
       fontFamily: {
         'sans': ['Roboto', 'system-ui'],
         'display': ['Roboto', 'sans-serif'],
