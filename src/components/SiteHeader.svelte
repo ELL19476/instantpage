@@ -155,9 +155,9 @@ let snapPoints = [...Array(3).keys()];
 
     <Hr color="panel/40" class="my-12 hidden md:block" width="2/3"></Hr>
     <!-- <Center class="space-x-5 mb-12"> -->
-    <div class="flex justify-center align-middle flex-col">
-        <Button class="z-20"><p>jetzt loslegen</p></Button>
-        <Button class="z-20" mainColor="accent-1"><p>mehr erfahren</p></Button>
+    <div class="flex justify-center items-center flex-col xs:flex-row space-y-4 xs:space-y-0 xs:space-x-5">
+        <Button class="z-20 max-w-fit"><p>jetzt loslegen</p></Button>
+        <Button class="z-20 max-w-fit" mainColor="accent-1"><p>mehr erfahren</p></Button>
     </div>
     <!-- </Center> -->
 </div>
