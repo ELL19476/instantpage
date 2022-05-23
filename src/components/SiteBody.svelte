@@ -2,6 +2,8 @@
     import SiteParagraph from "./SiteParagraph.svelte";
     import SectionHeader from "./SectionHeader.svelte";
     import ContactPanel from "./ContactPanel.svelte";
+    import Hr from "./basic/Hr.svelte";
+    import BigButton from "./basic/BigButton.svelte"
 
     let siteData = [
         {
@@ -46,32 +48,40 @@
                     text: "Von komplexen Fullstack-Webapps bis hin zu modernen Online-Auftritten habe ich schon alles umgesetzt. <br> Ich arbeite gerne und viel, doch trotzdem darf der Spaß an der Sache niemals fehlen!",
                     time: "3min",
                     img: "./assets/images/Placeholder.jpeg",
-                    imgClass: "mt-9 rounded-md object-cover p-0 max-h-96",
+                    imgClass: "mt-9 rounded-md object-cover p-0 max-h-96 shadow-md ",
                     alt: "Webentwicklung für mobile Geräte und Computer illustration.",
-                    contactPanel: true
+                    contactPanel: {
+                        phone: "+43 6504540202",
+                        mail: "samuel@ellmauer.eu",
+                        adress: "Aspangstraße 51, 1030 Wien"
+                    }
                 }
             ]
         }
     ];
 </script>
 
-<div class="xl:max-w-5xl lg:max-w-4xl m-auto pt-16">
+<div class="xl:max-w-5xl lg:max-w-4xl m-auto pt-16 px-6 md:px-8 mb-8 relative">
         {#each siteData as section}
             <SectionHeader class="mt-16"><strong class="font-bold">{@html section.title}</SectionHeader>
+            <div class="grid md:grid-cols-2 grid-cols-1 gap-y-4">
             {#each section.grid as item, i}
-                <div class="grid lg:grid-cols-2 grid-cols-1 gap-y-4">
                 {#if i % 2 == 0}
                 <img src="{item.img}" alt="{item.alt}" class="w-full {item.imgClass || ''}">
                 {/if}
                 <SiteParagraph {...item}>
                     {#if item.contactPanel}
-                        <ContactPanel></ContactPanel>
+                    <div class="mr-8"> <ContactPanel {...item.contactPanel} class="mt-8 mr-6"></ContactPanel> </div>
                     {/if}
                 </SiteParagraph>
                 {#if i % 2 != 0}
                 <img src="{item.img}" alt="{item.alt}" class="w-full {item.imgClass || ''}">
                 {/if}
-                </div>
-            {/each}
+                {/each}
+            </div>
         {/each}
+        <Hr class="my-24 w-3/4" color="panel/70"></Hr>
+        <img class="mr-56 h-64 -mt-32 ml-auto" src="./assets/illustrations/crossplattform-site.svg" alt="Illustration einer Website, die am Handy, Tablet und PC läuft.">
+        <div class="h-14"></div>
+        <BigButton class="absolute left-0 right-0 mx-auto -mt-3 w-fit bottom-0">Kostenlos loslegen!</BigButton>
 </div>
