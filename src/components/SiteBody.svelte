@@ -66,22 +66,17 @@
             <SectionHeader class="mt-16"><strong class="font-bold">{@html section.title}</SectionHeader>
             <div class="grid md:grid-cols-2 grid-cols-1 gap-y-4">
             {#each section.grid as item, i}
-                {#if i % 2 == 0}
-                <img src="{item.img}" alt="{item.alt}" class="w-full {item.imgClass || ''}">
-                {/if}
-                <SiteParagraph {...item}>
+                <img src="{item.img}" alt="{item.alt}" class="m-auto max-w-sm md:max-w-none w-full md:row-start-{i + 1} {i % 2 == 0? "" : "md:col-start-2"} {item.imgClass || ''}">
+                <SiteParagraph {...item} class="md:row-start-{i + 1}">
                     {#if item.contactPanel}
-                    <div class="mr-8"> <ContactPanel {...item.contactPanel} class="mt-8 mr-6"></ContactPanel> </div>
+                    <div class="md:mr-8"> <ContactPanel {...item.contactPanel} class="mt-8 md:mr-6"></ContactPanel> </div>
                     {/if}
                 </SiteParagraph>
-                {#if i % 2 != 0}
-                <img src="{item.img}" alt="{item.alt}" class="w-full {item.imgClass || ''}">
-                {/if}
                 {/each}
             </div>
         {/each}
         <Hr class="my-24 w-3/4" color="panel/70"></Hr>
-        <img class="mr-56 h-64 -mt-32 ml-auto" src="./assets/illustrations/crossplattform-site.svg" alt="Illustration einer Website, die am Handy, Tablet und PC läuft.">
+        <img class="mr-40 lg:mr-56 h-64 -mt-32 ml-auto" src="./assets/illustrations/crossplattform-site.svg" alt="Illustration einer Website, die am Handy, Tablet und PC läuft.">
         <div class="h-14"></div>
         <BigButton class="absolute left-0 right-0 mx-auto -mt-3 w-fit bottom-0">Kostenlos loslegen!</BigButton>
 </div>
