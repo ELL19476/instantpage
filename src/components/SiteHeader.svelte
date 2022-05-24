@@ -116,7 +116,7 @@ let snapPoints = [...Array(3).keys()];
 
     </h1>
     
-    <Title class="z-20 mt-12">IHRE <b>PROFESSIONELLE</b>, <b>HANDGEMACHTE</b> WEBSITE AUS WIEN</Title>
+    <Title class="z-20 sm:mt-12">IHRE <b>PROFESSIONELLE</b>, <b>HANDGEMACHTE</b> WEBSITE AUS WIEN</Title>
     
     <div bind:this="{parent}" class:snap-x={!isScrolling} class="overflow-x-scroll scrollbar-hide snap-mandatory" on:scroll="{onPanelScroll}">
         <Center class="mt-14 ml-[25vw] space-x-5 w-fit md:w-auto" horizontal={false}>
@@ -147,15 +147,17 @@ let snapPoints = [...Array(3).keys()];
         </Center>
     </div>
 
-    <Center class="md:hidden my-4">
+    <Center class="md:hidden my-6">
         {#each snapPoints as index}
             <div on:click="{() => snapToPanel(index)}" class="{index != imageIndex ? 'bg-opacity-50 scale-75' : ''} h-3 w-3 m-1 bg-text-2 rounded-full duration-150 ease-out"></div>
         {/each}
     </Center>
 
     <Hr color="panel/40" class="my-12 hidden md:block" width="2/3"></Hr>
-    <Center class="space-x-5 mb-12">
-        <Button>jetzt loslegen</Button>
-        <Button mainColor="accent-1">mehr erfahren</Button>
-    </Center>
+    <!-- <Center class="space-x-5 mb-12"> -->
+    <div class="flex justify-center items-center flex-col xs:flex-row space-y-4 xs:space-y-0 xs:space-x-5">
+        <Button class="z-20 max-w-fit"><p>jetzt loslegen</p></Button>
+        <Button class="z-20 max-w-fit" mainColor="accent-1"><p>mehr erfahren</p></Button>
+    </div>
+    <!-- </Center> -->
 </div>

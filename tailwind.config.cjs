@@ -17,6 +17,14 @@ module.exports = {
       'accent-1': '#667CF2',
       'accent-2': '#F83999'
     },
+    screens: {
+      'xs': '320px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       dropShadow: {
         'text': '0px 2px 1px rgba(0, 0, 0, 0.3)',
