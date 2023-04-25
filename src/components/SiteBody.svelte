@@ -63,7 +63,7 @@
 
 <div class="xl:max-w-5xl lg:max-w-4xl m-auto pt-16 px-6 md:px-8 mb-8 relative">
         {#each siteData as section}
-            <SectionHeader class="mt-16"><strong class="font-bold">{@html section.title}</SectionHeader>
+            <SectionHeader id="content" class="mt-16"><strong class="font-bold">{@html section.title}</SectionHeader>
             <div class="grid md:grid-cols-2 grid-cols-1 gap-y-4">
             {#each section.grid as item, i}
                 <img src="{item.img}" alt="{item.alt}" class="m-auto max-w-sm md:max-w-none w-full md:row-start-{i + 1} {i % 2 == 0? "" : "md:col-start-2"} {item.imgClass || ''}">

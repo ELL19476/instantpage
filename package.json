@@ -5,7 +5,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public --no-clear --host",
+    "start": "nodemon server.js",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "watch:tailwind": "postcss src/app.css -o public/build/index.css -w",
     "tailwind": "postcss src/app.css -o public/build/index.css",
@@ -20,6 +20,7 @@
     "concurrently": "^7.2.0",
     "fs": "^0.0.1-security",
     "jsdom": "^19.0.0",
+    "nodemon": "^2.0.16",
     "postcss": "^8.4.14",
     "postcss-cli": "^9.1.0",
     "rollup": "^2.3.4",
@@ -37,6 +38,7 @@
     "typescript": "^4.0.0"
   },
   "dependencies": {
+    "express": "^4.18.1",
     "sirv-cli": "^2.0.0"
   }
 }

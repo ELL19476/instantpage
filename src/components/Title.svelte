@@ -12,7 +12,7 @@ import Center from "./basic/Center.svelte";
 </script>
 
 <Center>
-    <h1 class=" mx-3 md:leading-[57px] md:w-{width} w-{smWidth} text-{textAlign} md:text-{Fontsize} {_class || ''} text-3xl font-medium">
+    <h1 class=" mx-3 sm:leading-[57px] md:w-{width} w-{smWidth} text-{textAlign} sm:text-{Fontsize} {_class || ''} text-3xl font-medium">
         <slot></slot>
     </h1>
 </Center>

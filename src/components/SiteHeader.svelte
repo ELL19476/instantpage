@@ -101,6 +101,34 @@ function lerp(a: number, b: number, t: number) {
 
 let snapPoints = [...Array(3).keys()];
 
+function getYOffset(el) {
+  return el.getBoundingClientRect().top + window.scrollY;
+}
+
+function scrollToContent(e: any) {
+    let content = document.getElementById("content");
+    let startPos = window.scrollY;
+    let endPos = getYOffset(content);
+    console.log(startPos);
+    console.log(endPos);
+
+    let start = undefined;
+    let duration = 600;
+    function animate(timestep) {
+        if(!start) {
+            start = timestep;
+        }
+        let t = (timestep - start) / duration;
+        window.scrollTo(0, startPos + (endPos - startPos) * easeOut(t));
+        if(t < 1) {
+            window.requestAnimationFrame(animate);
+            console.log(t);
+        }
+    }
+    window.requestAnimationFrame(animate);
+
+}
+
 </script>
 
 <div class="z-10 absolute h-screen w-16 bg-gradient-to-r from-background to-background/0">
@@ -156,8 +184,8 @@ let snapPoints = [...Array(3).keys()];
     <Hr color="panel/40" class="my-12 hidden md:block" width="2/3"></Hr>
     <!-- <Center class="space-x-5 mb-12"> -->
     <div class="flex justify-center items-center flex-col xs:flex-row space-y-4 xs:space-y-0 xs:space-x-5">
-        <Button class="z-20 max-w-fit"><p>jetzt loslegen</p></Button>
-        <Button class="z-20 max-w-fit" mainColor="accent-1"><p>mehr erfahren</p></Button>
+        <Button class="z-20 max-w-fit" smPX="3" smPY="1"><p>jetzt loslegen</p></Button>
+        <Button class="z-20 max-w-fit" smPX="3" smPY="1" mainColor="accent-1" on:click="{scrollToContent}"><p>mehr erfahren</p></Button>
     </div>
     <!-- </Center> -->
 </div>
