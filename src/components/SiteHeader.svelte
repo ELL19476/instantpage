@@ -9,7 +9,6 @@ import Title from "./Title.svelte";
 import Hr from "./basic/Hr.svelte";
 import Button from "./basic/Button.svelte";
 import { onMount } from "svelte";
-import App from "../App.svelte";
 
 let imageIndex = 0;
 
