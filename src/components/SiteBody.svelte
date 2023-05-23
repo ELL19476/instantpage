@@ -1,82 +1,61 @@
 <script>
-    import SiteParagraph from "./SiteParagraph.svelte";
-    import SectionHeader from "./SectionHeader.svelte";
-    import ContactPanel from "./ContactPanel.svelte";
-    import Hr from "./basic/Hr.svelte";
-    import BigButton from "./basic/BigButton.svelte"
+  import Button from "./basic/Button.svelte";
+  import Link from "./basic/Link.svelte";
+  import PhoneFrame from "./PhoneFrame.svelte";
+  import DownArrow from "./basic/DownArrow.svelte";
+  import pricing_circle from "../assets/ui/pricing_circle.svg"
+  import bg_shape from "../assets/ui/bg_shape.svg"
+  import { onMount } from "svelte";
 
-    let siteData = [
-        {
-            title: `<strong class="font-bold">Wie</strong> es Funktioniert`,
-            grid: [
-                {
-                    title: "Ihre Vision professionell <em>umgesetzt</em>.",
-                    subheading: "Wir analysieren Ihre Wünsche, und legen sofort los!",
-                    text: "In einem innovativen Präferenzfindungs-prozess geben Sie mir die nötigen Informationen, um Ihre  maßgeschneiderte Webpräsenz zu erstellen.",
-                    button: "Teilen Sie uns Ihre Vision mit",
-                    time: "3min",
-                    img: "./assets/illustrations/progressive_app.svg",
-                    imgClass: "mt-9 p-3 pr-4 pl-8 max-h-72",
-                    alt: "Webentwicklung für mobile Geräte und Computer illustration."
-                }, 
-                {
-                    title: "Zeit ist Geld. <em>Sparen Sie beides!</em>",
-                    subheading: "Keine teuren Meetings, keine Reibungsverluste.",
-                    text: "Sie geben uns so viele oder so wenige Infos wie Sie wollen - mithilfe effizienter Tools und professioneller Arbeitsprozesse erstellen wir Ihnen Ihre Website in Rekordzeit.",
-                    button: "Ihre Website ab 129€",
-                    img: "./assets/illustrations/engineering_team.svg",
-                    imgClass: "mt-4 p-3 pl-4 pr-8 max-h-72",
-                    alt: "Team an motivierten Webentwicklern."
-                },
-                {
-                    title: "In <em>guten</em> Händen.",
-                    subheading: "Ihr Vertrauen ist uns wichtig.",
-                    text: "Gefällt Ihnen die Seite nicht? Sie bekommen Ihr Geld zurück. Einfach so.",
-                    button: "Kostenlos loslegen",
-                    img: "./assets/illustrations/appreciation.svg",
-                    imgClass: "mt-9",
-                    alt: "Vertrauenswürdiges und humorvolles Team."
-                }
-            ]
-        },
-        {
-            title: `Unser <strong class="font-bold">Team</strong>`,
-            grid: [
-                {
-                    title: "<em>Webdesigner</em> aus Wien",
-                    subheading: "Als Programmierer habe ich schon vor langer Zeit meine Leidenschaft fürs Webdesign entdeckt.",
-                    text: "Von komplexen Fullstack-Webapps bis hin zu modernen Online-Auftritten habe ich schon alles umgesetzt. <br> Ich arbeite gerne und viel, doch trotzdem darf der Spaß an der Sache niemals fehlen!",
-                    time: "3min",
-                    img: "./assets/images/Placeholder.jpeg",
-                    imgClass: "mt-9 rounded-md object-cover p-0 max-h-96 shadow-md ",
-                    alt: "Webentwicklung für mobile Geräte und Computer illustration.",
-                    contactPanel: {
-                        phone: "+43 6504540202",
-                        mail: "samuel@ellmauer.eu",
-                        adress: "Aspangstraße 51, 1030 Wien"
-                    }
-                }
-            ]
-        }
-    ];
+  export let contentHeight;
+  export let navbarHeight;
+
+  let root;
+  onMount(() => {
+        root.style.minHeight = contentHeight + "px";
+        root.style.marginTop = navbarHeight + "px";
+    });
+
+    $: {
+        if(root) {
+            root.style.minHeight = contentHeight + "px";
+            root.style.marginTop = navbarHeight + "px";
+        }     
+    }
+
 </script>
 
-<div class="xl:max-w-5xl lg:max-w-4xl m-auto pt-16 px-6 md:px-8 mb-8 relative">
-        {#each siteData as section}
-            <SectionHeader id="content" class="mt-16"><strong class="font-bold">{@html section.title}</SectionHeader>
-            <div class="grid md:grid-cols-2 grid-cols-1 gap-y-4">
-            {#each section.grid as item, i}
-                <img src="{item.img}" alt="{item.alt}" class="m-auto max-w-sm md:max-w-none w-full md:row-start-{i + 1} {i % 2 == 0? "" : "md:col-start-2"} {item.imgClass || ''}">
-                <SiteParagraph {...item} class="md:row-start-{i + 1}">
-                    {#if item.contactPanel}
-                    <div class="md:mr-8"> <ContactPanel {...item.contactPanel} class="mt-8 md:mr-6"></ContactPanel> </div>
-                    {/if}
-                </SiteParagraph>
-                {/each}
-            </div>
-        {/each}
-        <Hr class="my-24 w-3/4" color="panel/70"></Hr>
-        <img class="mr-40 lg:mr-56 h-64 -mt-32 ml-auto" src="./assets/illustrations/crossplattform-site.svg" alt="Illustration einer Website, die am Handy, Tablet und PC läuft.">
-        <div class="h-14"></div>
-        <BigButton class="absolute left-0 right-0 mx-auto -mt-3 w-fit bottom-0">Kostenlos loslegen!</BigButton>
+<div class="flex relative h-min" bind:this={root}>
+    <DownArrow jumpHeight="1.5rem" class="absolute bottom-4 right-0 left-0 m-auto" arrowClasses="w-4"></DownArrow>
+    <div class="p-14 pr-0 mr-12 pb-0 h-100 flex flex-col gap-1 md:gap-4 lg:gap-5 grow basis-[content] bg-bright-3/60 max-w-4xl">
+        <h1 class="uppercase text-4xl lg:text-5xl text-text-1/90 leading-snug md:leading-snug lg:leading-snug mb-3 max-w-2xl">Das studentische Webdesign Kollektiv aus Wien.</h1>
+        <span class="max-w-xl mb-4">
+            <p class="bg-primary/90 text-text-3 text-2xl lg:text-3xl inline whitespace-break-spaces px-[.2em] font-light">Wir sind die Alternative zu großen Agenturen und etablierten Preisen.</p>
+        </span>
+        <p class="hidden md:block text-md lg:text-lg leading-9 lg:leading-9 mr-24 max-w-xl">Wir sind jung, gut ausgebildet und auf dem neusten Stand der Technik. Unser Geschäftsmodell ist fair und transparent: Sie zahlen einen Bruchteil eines Agentur-Preises und verzichten auf verglaste Meeting-Räume, wir liefern Ihnen im Gegenzug eine hochqualitative Webseite.</p>
+    
+        <div class="mt-auto mb-12">
+            <Button pX="4" pY="3">Mehr Erfahren</Button><Link class="uppercase md:px-8 md:py-4 text-sm md:text-base" pX="4" pY="3" activeTextColor="text-3" activeColor="primary/20" hoverTextColor="text-3" hoverColor="action-color" href="tel:+436504540202">Anrufen</Link>
+        </div>
+    </div>
+    <div class="flex mx-auto grow justify-center mr-12">
+        <div class="w-52 -mr-16 z-10 mt-24 drop-shadow-cmd">
+            {@html pricing_circle}
+        </div>
+        <figure class="overflow-clip min-h-[32rem] h-[85vh] mt-auto w-auto">
+            <PhoneFrame class="mt-20 h-full w-auto drop-shadow-clg" imageLink="assets/frames/frame_1.svg" imageAlt="Dunkles, mobiles Handymockup für eine Immobiliensuch Website."></PhoneFrame>
+        </figure>
+    </div>
+    <div class="absolute top-0 bottom-0 left-0 right-0 -z-10 overflow-clip">
+        <img src="assets/images/Stephan.png" alt="Bild vom Stephansdom in Wien." class="absolute bottom-0 left-0 h-3/4 w-auto blur-sm -z-20">
+        <img src="assets/images/Stephan.png" alt="Bild vom Stephansdom in Wien." class="absolute bottom-0 left-0 h-3/4 w-auto blur-3xl -z-30 scale-110 -translate-y-16 opacity-40">
+        <img src="assets/images/FerrisWheel.png" alt="Bild vom Riesenrad in Wien." class="absolute top-0 right-0  h-3/5 w-auto blur-sm -z-20 rotate-180">
+        <span class="absolute -z-40 text-[#88BFFF] h-full bottom-0 left-0 translate-y-24 blur-3xl">
+        {@html bg_shape}
+        </span>
+        <span class="absolute -z-40 text-[#82FFF7] h-full bottom-0 right-0 translate-x-24 rotate-180 opacity-30 blur-3xl">
+            {@html bg_shape}
+        </span>
+        <div class="w-full h-full bg-bright-4/30"></div>
+    </div>
 </div>

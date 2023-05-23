@@ -3,25 +3,21 @@
 @tailwind utilities;
 
 @layer base{
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-display;
+    }
     body {
         @apply bg-background;
-    }
-    
-    h1{
-        @apply font-sans text-primary;
-    }
-
-    h2{
-
-    }
-
-    h3{
-        @apply drop-shadow-text text-primary text-xl;
-        
+        @apply overflow-x-hidden
     }
 
     em {
         @apply text-text-1;
         @apply not-italic;
+    }
+
+    svg {
+        @apply h-full;
+        @apply w-full;
     }
 }

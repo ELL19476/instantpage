@@ -1,25 +1,22 @@
-<script>    
+<script>
+    import Link from "./Link.svelte";
+
+    export let ariaLabel = "button";
     export let mainColor = "primary";
-    export let textColor = "background";
-    export let accentColor = "text-2";
-    export let rounding = "full";
+    export let textColor = "text-3";  
+    export let rounding = "none";
+    export let hoverColor = "action-color";
+    export let hoverTextColor = "text-3";
+    export let activeColor = "primary/20";
+    export let activeTextColor = "text-3";
+
 
     export let pY = "2";
     export let pX = "5";
-    export let smPY = undefined;
-    export let smPX = undefined;
     
-    export let classes = "";
+    export let classes = "md:px-8 md:py-4 text-sm md:text-base";
     export {classes as class};
-    // <span class="h-[1em] inline-block ml-2">{@html arrow}</span>
 </script>
-
-<button on:click class="font-black transition-colors bg-{mainColor} text-{textColor} hover:bg-{accentColor} focus:outline-none active:ring active:ring-{accentColor} font-bold sm:py-{pY} sm:px-{pX} px-{smPX || pX} py-{smPY || pY} rounded-{rounding} border-0 uppercase shadow-glow shadow-{mainColor}/40 hover:shadow-{accentColor}/40 {classes} flex items-center">
-    <slot></slot>
-</button>
-
-<style>
-    button {
-        box-shadow: var(--tw-shadow), 0px 2px 2px rgba(0, 0, 0, 0.4);
-    }
-</style> 
+<Link href="#" class="{classes} font-normal" pY={pY} pX={pX} mainColor={mainColor} textColor={textColor} rounding={rounding} ariaLabel={ariaLabel} hoverColor={hoverColor} activeColor={activeColor} hoverTextColor={hoverTextColor} activeTextColor={activeTextColor}>
+<slot></slot>
+</Link>
