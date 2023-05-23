@@ -21,8 +21,8 @@ module.exports = {
       'action-color': '#7CD59A',
     },
     screens: {
-      'xs': '320px',
-      'sm': '640px',
+      'xs': '375px',
+      'sm': '554px',
       'md': '768px',
       'lg': '1024px',
       'xl': '1280px',

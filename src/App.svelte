@@ -8,6 +8,7 @@
     let screenHeight;
     let contentHeight = 0;
     let navbarHeight = 0;
+    let responsiveWidth = 0;
     
     onMount(() => {
         navbarHeight = document.getElementById("header").offsetHeight;
@@ -17,12 +18,12 @@
     {
         if(header) {
             navbarHeight = document.getElementById("header").offsetHeight;
-            contentHeight = screenHeight - navbarHeight;
+            contentHeight = screenHeight - navbarHeight + responsiveWidth * 0;
         }
     }
     
 </script>
-<svelte:window bind:innerHeight={screenHeight} /> 
+<svelte:window bind:innerHeight={screenHeight} bind:innerWidth={responsiveWidth} /> 
 <main>
     <SiteHeader bind:this={header} />
 

@@ -4,37 +4,44 @@
     import Link from "./Link.svelte";
 
     export let classes = "md:px-8 md:py-4 text-sm md:text-base";
+    export let href = "#";
     export {classes as class};
     export let arrowClasses = "";
 </script>
 
-<div class="rounded-full arrow {classes}" style="--jumpHeight:{jumpHeight}">
-    <Link pX="2" py="4" rounding="full" class="{classes}">
-        <span class="{arrowClasses} animate-bounce">
+<div class="rounded-full arrow w-fit mx-auto z-50 {classes}" style="--jumpHeight:{jumpHeight}">
+    <Link pX="2" pY="2" rounding="full" href={href}>
+        <div class="block {arrowClasses}">
             {@html arrow}
-        </span>
+        </div>
     </Link>
 </div>
 <style>
     .arrow {
         animation: jumpInfinite 2.5s infinite ease-in;
     }
+    .arrow:hover {
+        animation-play-state: paused;
+    }
 
     @keyframes jumpInfinite {
         0% {
-            transform: translateY(0);
+            bottom: var(--jumpHeight);
+        }
+        50% {
+            opacity: .6;
         }
         80% {
-            transform: translateY(--jumpHeight);
+            bottom: 0;
             opacity: 0;
         }
         81% {
-            transform: translateY(0);
+            bottom: var(--jumpHeight);
             opacity: 0;
         }
         100% {
             opacity: 1;
-            transform: translateY(0);
+            bottom: var(--jumpHeight);
         }
     }
 </style>
